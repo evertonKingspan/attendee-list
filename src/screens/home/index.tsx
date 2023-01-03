@@ -11,7 +11,10 @@ export default function Home() {
 
   function handleParticipantAdd() {
     if (participantName === "") {
-      return alert("Inclua pelo menos três letras ao participante");
+      return Alert.alert(
+        "Participante não pode estar vazio",
+        "Inclua pelo menos três letras ao participante"
+      );
     }
     if (participants.includes(participantName)) {
       return Alert.alert(
@@ -72,8 +75,8 @@ export default function Home() {
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={() => (
           <Text style={styles.listEmptyText}>
-            Ninguém chegou no evento ainda? adicione participantes na sua lista
-            de presença
+            Ninguém chegou no evento ainda? Adicione participantes na sua lista
+            de presença.
           </Text>
         )}
       />
